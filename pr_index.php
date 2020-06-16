@@ -24,7 +24,7 @@ include('checkUser.php');
 check_user();
  ?>
 <body>
-  <h1>Bonjour <?php echo($_SESSION['username']); ?>, sois la bienvenue sur ton panel Stockify Premium !</h2>
+  <h1>Bonjour <?php echo($_SESSION['username']); ?>, sois le bienvenue sur ton panel Stockify Premium !</h2>
   <br><br>
   <p>Derniere connexion : <?php getLastConnection();?>  (pas encore fonctionnel)</p>
   <a href="deconnexion.php"><button class="btn" id="btn_deconnexion">Deconnexion</button></a>
