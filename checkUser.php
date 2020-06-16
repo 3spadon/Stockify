@@ -28,6 +28,7 @@ function check_user(){
       }
   }
   else{
+    //On invite la personne non connectée à le faire en le redirigeant. La redirection à pour option 'no_user_logged' afin d'afficher le bon message d'erreur sur la page de connexion
   header('Location: pageConnexion.php?err=no_user_logged');
   }
 

@@ -7,7 +7,8 @@
   <meta name="description" content="">
   <meta name="author" content="Vincent BOUCHEZ">
 
-  <link rel="stylesheet" type="text/css" href="style.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
