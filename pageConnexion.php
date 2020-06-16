@@ -18,9 +18,8 @@
 </head>
 
 <body>
-  <h1>Bienvenue sur Stockify</h2>
+  <h1>Connexion</h1>
   <form action="authentication.php" method="post" id="authentication">
-      <h1>Connexion</h1>
       <p id="err" hidden></p>
       <?php
       if($_GET['err']=='no_given_credentials'){ $messageErreur='Veuillez renseigner vos identifiants !'; }
