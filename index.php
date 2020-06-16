@@ -22,7 +22,7 @@
   mb_internal_encoding('UTF-8');
   if($_GET['logout']=='1'){ echo("<script>alert('Vous vous etes correctement deconnecte')</script>"); }
   ?>
-  <h1>Sois la bienvenue sur Stockify</h2>
+  <h1>Sois le bienvenu sur Stockify</h2>
   <br><br>
   <a href="pageConnexion.php"><button class="btn" id="btn_connexion">Connexion</button></a>
                                                                                                                                                                                                             </body>
