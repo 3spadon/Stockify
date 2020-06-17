@@ -1,0 +1,33 @@
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: auto;
+  width: 40em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+
+form p{
+  margin-bottom: -0.01em;
+  font-weight:500;
+}
+input{
+  width: 30em;
+}
+
+.formInput{
+  margin-top:0.5em;
+}
+
+.newsletter{
+
+  display: inline;
+}

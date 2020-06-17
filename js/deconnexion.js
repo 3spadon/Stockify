@@ -1,5 +1,0 @@
-function deconnexion(il) {
-  
-
-
-}

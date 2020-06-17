@@ -12,7 +12,7 @@ check_user();
   <meta name="description" content="">
   <meta name="author" content="Vincent BOUCHEZ">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="css/landing-page.css" media="all"/>
 
 
   <!-- Google Fonts -->
@@ -24,7 +24,7 @@ check_user();
 
 <body>
   <h1>Bonjour <?php echo($_SESSION['username']); ?>, sois le bienvenue sur ton panel Stockify Premium !</h2>
-  <br><br>
+  <br>
   <p>Dernière connexion : <?php echo($_SESSION['dateDerniereConnexion']);?></p>
   <a href="deconnexion.php"><button class="btn" id="btn_deconnexion">Déconnexion</button></a>
 </body>

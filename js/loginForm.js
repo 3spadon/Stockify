@@ -1,6 +1,5 @@
-function spawnError(error) {
-  document.getElementById('err').removeAttribute('hidden');
-  document.getElementById('err').innerHTML=error;
-  document.getElementById('err').style.color=red;
-  document.getElementById('login').style.height='240px';
+function spawnError(error,color) {
+  document.getElementById('underLoginFormMessage').removeAttribute('hidden');
+  document.getElementById('underLoginFormMessage').innerHTML=error;
+  document.getElementById('underLoginFormMessage').style.color=color;
 }

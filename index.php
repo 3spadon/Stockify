@@ -32,17 +32,17 @@
       <a class="navbar-brand" href="index.php"><b>Stockify</b> | Pour un investissement accessible à tous</a>
       <form action="authentication.php" method="post" id="authentication">
         <div id="loginForm">
-            <input id="username" name="username" type="text" placeholder="Username" autofocus required>
-            <input id="password" name="password" type="password" placeholder="Password" required>
-            <input type="submit" action="authentication.php" id="submit" class="btn btn-primary" value="Connexion">
+            <input id="username" class="inpText" name="username" type="text" placeholder="Username" autofocus required>
+            <input id="password" class="inpText" name="password" type="password" placeholder="Password" required>
+            <input type="submit" action="authentication.php" id="btnSubmit" class="btn btn-primary" value="Connexion">
         </div>
-        <p id="err" class="messageErreur" hidden></p>
+        <p id="underLoginFormMessage" class="messageErreur" hidden></p>
         <?php
-        if($_GET['logout']=='1'){ echo("<script>alert('Vous vous √™tes correctement d√©connect√©')</script>"); }
+        if($_GET['logout']=='1'){ $messageErreur='Vous vous êtes correctement déconnecté.'; echo("<script>spawnError('".$messageErreur."','green');</script>");}
         if($_GET['err']=='no_given_credentials'){ $messageErreur='Veuillez renseigner vos identifiants !'; }
         if($_GET['err']=='wrong_credentials'){ $messageErreur='Identifiants incorrects !'; }
-        if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour acc√©der √† la partie premium !'; }
-        if($_GET['err']){ echo("<script>spawnError('".$messageErreur."');</script>"); }
+        if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour accéder à la partie premium !'; }
+        if($_GET['err']){ echo("<script>spawnError('".$messageErreur."','#9a3b71');</script>"); }
         ?>
       </div>
     </form>
@@ -57,10 +57,10 @@
           <h1 class="mb-5">Comprendre la bourse n'a jamais été aussi facile, qu'est-ce que tu attends ?</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="formulaireInscription.php" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Entrez votre adresse email...">
+                <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrez votre adresse email...">
               </div>
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary">S'inscrire!</button>
@@ -174,13 +174,13 @@
           <h2 class="mb-4">Prêt à rejoindre la communauté ?</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="formulaireInscription.php" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Entrez votre adresse email...">
+                <input type="email" name="email" class="form-control form-control-lg" placeholder="Entrez votre adresse email...">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">S'inscrire !</button>
+                <button type="submit" action="formulaireInscription.php" class="btn btn-block btn-lg btn-primary">S'inscrire !</button>
               </div>
             </div>
           </form>

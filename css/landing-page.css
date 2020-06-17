@@ -18,8 +18,18 @@ h6 {
   font-weight: 700;
 }
 
+nav input#btnSubmit{
+  margin-left: 5px;
+}
+
+nav input.inpText{
+  margin-left: 5px;
+}
+
 p#err.messageErreur{
   color:#9a3b71;
+  padding-top:4px;
+  font-size: 0.8em;
 }
 
 header.masthead {

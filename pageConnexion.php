@@ -20,11 +20,12 @@
 <body>
   <h1>Connexion</h1>
   <form action="authentication.php" method="post" id="authentication">
-      <p id="err" hidden></p>
+      <p id="underLoginFormMessage" hidden></p>
       <?php
       if($_GET['err']=='no_given_credentials'){ $messageErreur='Veuillez renseigner vos identifiants !'; }
       if($_GET['err']=='wrong_credentials'){ $messageErreur='Identifiants incorrects !'; }
-      if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour accÃ©der Ã  la partie premium !'; }
+      if($_GET['logout']=='1'){ $messageErreur='Vous vous tes correctement dŽconnectŽ.'; }
+      if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour accŽder ˆ la zone premium !'; }
       if($_GET['err']){ echo("<script>spawnError('".$messageErreur."');</script>"); }
       ?>
       <div id="inputs">
