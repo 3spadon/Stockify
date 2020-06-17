@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<?php
+session_start();
+//Vérification de la connexion utilisateur
+include('checkUser.php');
+check_user();
+ ?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,17 +21,11 @@
 
   <title>Accueil</title>
 </head>
-<?php
-session_start();
-//V�rification de la connexion utilisateur
-include('lastConnection.php');
-include('checkUser.php');
-check_user();
- ?>
+
 <body>
   <h1>Bonjour <?php echo($_SESSION['username']); ?>, sois le bienvenue sur ton panel Stockify Premium !</h2>
   <br><br>
-  <p>Derniere connexion : <?php getLastConnection();?>  (pas encore fonctionnel)</p>
-  <a href="deconnexion.php"><button class="btn" id="btn_deconnexion">Deconnexion</button></a>
+  <p>Dernière connexion : <?php echo($_SESSION['dateDerniereConnexion']);?></p>
+  <a href="deconnexion.php"><button class="btn" id="btn_deconnexion">Déconnexion</button></a>
 </body>
 </html>

@@ -24,7 +24,7 @@
       <?php
       if($_GET['err']=='no_given_credentials'){ $messageErreur='Veuillez renseigner vos identifiants !'; }
       if($_GET['err']=='wrong_credentials'){ $messageErreur='Identifiants incorrects !'; }
-      if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour acceder a la partie premium !'; }
+      if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour accéder à la partie premium !'; }
       if($_GET['err']){ echo("<script>spawnError('".$messageErreur."');</script>"); }
       ?>
       <div id="inputs">

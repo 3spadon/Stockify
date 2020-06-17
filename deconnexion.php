@@ -1,7 +1,6 @@
 <?php
   session_start();
-  $_SESSION['username']="";
-  $_SESSION['password']="";
-  header('Location: index.php?logout=1');
-
+  if(session_destroy()){
+    header('Location: index.php?logout=1');
+  }
  ?>

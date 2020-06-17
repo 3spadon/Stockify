@@ -32,6 +32,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])){ //Si les champs p
     if($data = $result->fetch_assoc()){
       $dbUsername=$data['username'];
       $dbPassword=$data['password'];
+      $_SESSION['dateDerniereConnexion']=$data['dateDerniereConnexion'];
       //On met ˆ jour la date de dernire connexion de l'utilisateur
       $sql= "UPDATE `utilisateurs` SET `dateDerniereConnexion` = CURRENT_TIMESTAMP WHERE `username` LIKE '".$inpUsername."' AND `password` LIKE SHA1('".$inpPassword."')";
       $mysqli->query($sql);
@@ -41,11 +42,11 @@ if (!empty($_POST['username']) && !empty($_POST['password'])){ //Si les champs p
       header('Location: pr_index.php');
     }
     else{
-      header('Location: pageConnexion.php?err=wrong_credentials');
+      header('Location: index.php?err=wrong_credentials');
     }
 }
 else{
-header('Location: pageConnexion.php?err=no_given_credentials');
+header('Location: index.php?err=no_given_credentials');
 }
 
 $mysqli -> close();
