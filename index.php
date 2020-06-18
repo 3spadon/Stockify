@@ -5,15 +5,13 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Stockify | Pour un investissement accessible à tous">
+  <meta name="description" content="Stockify | Pour un investissement accessible √† tous">
   <meta name="author" content="Vincent BOUCHEZ">
 
   <title>Stockify</title>
 
-  <link href="css/style.css" rel="stylesheet">
-
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -27,18 +25,19 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
+  <nav class="navbar navbar-light bg-light static-top" id="navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.php"><b>Stockify</b> | Pour un investissement accessible à tous</a>
+      <a class="navbar-brand" href="index.php"><b>Stockify</b> | L'investissement accessible pour tous</a>
       <form action="authentication.php" method="post" id="authentication">
         <div id="loginForm">
-            <input id="username" class="inpText" name="username" type="text" placeholder="Username" autofocus required>
-            <input id="password" class="inpText" name="password" type="password" placeholder="Password" required>
+            <input id="username" class="inpText" name="username" type="text" placeholder="Nom d'utilisateur" autofocus required>
+            <input id="password" class="inpText" name="password" type="password" placeholder="Mot de passe" required>
             <input type="submit" action="authentication.php" id="btnSubmit" class="btn btn-primary" value="Connexion">
         </div>
+        <a href="#" id="motDePasseOublie">Mot de passe oublié ?</a>
         <p id="underLoginFormMessage" class="messageErreur" hidden></p>
         <?php
-        if($_GET['logout']=='1'){ $messageErreur='Vous vous êtes correctement déconnecté.'; echo("<script>spawnError('".$messageErreur."','green');</script>");}
+        if($_GET['logout']){ $messageErreur='Vous vous êtes correctement déconnecté.'; echo("<script>spawnError('".$messageErreur."','green');</script>");}
         if($_GET['err']=='no_given_credentials'){ $messageErreur='Veuillez renseigner vos identifiants !'; }
         if($_GET['err']=='wrong_credentials'){ $messageErreur='Identifiants incorrects !'; }
         if($_GET['err']=='no_user_logged'){ $messageErreur='Vous devez vous identifier pour accéder à la partie premium !'; }
@@ -138,7 +137,7 @@
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
-      <h2 class="mb-5">Ce que les gens pensent de nous...</h2>
+      <h2 class="mb-5">Qu'en pensent nos utilisateurs ?</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">

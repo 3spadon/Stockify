@@ -22,14 +22,32 @@ nav input#btnSubmit{
   margin-left: 5px;
 }
 
+a#motDePasseOublie{
+  font-size: 8pt;
+  margin-top: -6px;
+  margin-left: 260px;
+  position: absolute;
+}
+
+a#motDePasseOublie:hover{
+  color:darkblue;
+  text-decoration: none;
+}
+
 nav input.inpText{
   margin-left: 5px;
 }
 
-p#err.messageErreur{
+p#underLoginFormMessage.messageErreur{
   color:#9a3b71;
-  padding-top:4px;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  margin-top: 0.45em;
+  margin-left: 0.4em;
+  position:fixed;
+}
+
+header{
+  padding-top:1em;
 }
 
 header.masthead {
@@ -137,4 +155,8 @@ header.masthead h1 {
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+footer ul.list-inline{
+  width:35em;
 }
