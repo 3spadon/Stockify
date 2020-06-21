@@ -8,9 +8,7 @@
   <meta name="description" content="Stockify | Pour un investissement accessible √† tous">
   <meta name="author" content="Vincent BOUCHEZ">
 
-  <title>Stockify|Accueil</title>
-
-  <link href="css/main.css" rel="stylesheet">
+  <title>Stockify</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -20,83 +18,22 @@
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  <script src="js/loginForm.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.css" rel="stylesheet">
 </head>
-<?php
-session_start();
-//Vérification de la connexion utilisateur
-include('checkUser.php');
-check_user();
- ?>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top" id="navbar">
     <div class="container">
-      <a class="navbar-brand" href="pr_index.php"><b>Stockify</b> | Accueil</a>
-      <a href="deconnexion.php"><button class="btn btn-primary" id="btn_deconnexion"><i class="icon-login"> </i> Déconnexion</button></a>
+      <a class="navbar-brand" href="index.php"><b>Stockify</b> | L'investissement accessible pour tous</a>
+
   </nav>
 
-  <!-- Masthead -->
-  <header class="">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="sidebar-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item nav-user">
-              <i class="icon-user"><?php echo(" ".$_SESSION['username']);?></i>
-            </li>
-            <hr class="separateur">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="home"></span>
-                Mon compte <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Tendances
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="shopping-cart"></span>
-                Actualité
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                Communauté
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Rapports
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Prévisions
-              </a>
-            </li>
-        </ul>
-        </div>
-        <div class="col-md-9 mx-auto">
-
-          <h1>Bonjour <?php echo($_SESSION['username']); ?>, bienvenue sur ton panel Stockify Premium !</h2>
-          <br>
-          <p>Dernière connexion : <?php echo($_SESSION['dateDerniereConnexion']);?></p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
+  <main>
+    <h3>Lorem Ipsum</h3>
+    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum <br> Lorem Ipsum Lorem Ipsum Lorem Ipsum v Lorem Ipsum Lorem Ipsum</p>
+  </main>
 
   <!-- Footer -->
   <footer class="footer bg-light">

@@ -27,11 +27,6 @@ nav input.inpText{
   margin-left: 5px;
 }
 
-a#nav-user{
-  font-size:16pt;
-  text-align: right;
-}
-
 #btn_deconnexion{
   font-weight: 450;
 }
@@ -40,7 +35,13 @@ header{
   padding-top:1em;
 }
 
+i#nav-user{
+  padding-left: 15px;
+}
 
+.separateur{
+  width: 100%;
+}
 
 .sidebar {
   position: fixed;

@@ -43,7 +43,7 @@ p#underLoginFormMessage.messageErreur{
   font-size: 0.9em;
   margin-top: 0.45em;
   margin-left: 0.4em;
-  position:fixed;
+  position:absolute;
 }
 
 header{
