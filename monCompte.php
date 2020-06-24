@@ -11,7 +11,7 @@
   <title>Stockify|Accueil</title>
 
   <link href="css/main.css" rel="stylesheet">
-
+  <link href="css/monCompte.css" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -88,9 +88,54 @@ check_user();
         </div>
         <div class="col-md-9 mx-auto">
 
-          <h1>Bonjour <?php echo($_SESSION['username']); ?>, bienvenue sur ton panel Stockify Premium !</h2>
-          <br>
-          <p>Dernière connexion : <?php echo($_SESSION['dateDerniereConnexion']);?></p>
+          <h1><i class="icon-settings"></i> Réglages du compte</h2>
+          <hr class="separateur">
+          <h3>Modifier mon mot de passe</h3>
+          <p>Pour rappel: votre mot de passe doit avoir une longueur d'au moins 8 caractères, contenir au moins une majuscule et une minuscule.</p>
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label for="password">Mot de passe actuel</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="password" id="password" placeholder="" required>
+                <div class="invalid-feedback">
+                  Veuillez entrer un mot de passe.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="password">Nouveau mot de passe</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="newPassword" id="password" placeholder="" required>
+                <div class="invalid-feedback">
+                  Veuillez entrer un nouveau mot de passe.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="passwordBis">Confirmer le mot de passe</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="newPasswordBis" id="passwordBis" required>
+                <div class="invalid-feedback">
+                  Veuillez confirmer le mot de passe.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+            <button class="btn btn-primary btn-block" id="btnChangePassword" type="submit"> Modifier mon mot de passe</button>
+          </div>
+          </div>
+          <!-- <p>Dernière connexion : <?php //echo($_SESSION['dateDerniereConnexion']);?></p> -->
         </div>
       </div>
     </div>

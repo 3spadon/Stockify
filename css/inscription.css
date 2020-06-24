@@ -31,3 +31,11 @@
 .chk_newsletter{
   padding-left:2em;
 }
+
+#messageErreurPassword{
+  margin-left:1.5em;
+}
+
+#caracteristiquesMotDePasse{
+  font-size: 0.62em;
+}

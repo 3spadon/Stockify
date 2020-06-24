@@ -21,49 +21,14 @@
 
   <!-- Vendor CSS-->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
   <title>Stockify|Inscription</title>
 </head>
 <body>
-
-  <!-- <form action="inscription.php" method="post">
-        <div class="formInput">
-          <p>Courriel</p>
-
-        </div>
-        <div class="formInput">
-          <p>Nom d'utilisateur</p>
-          <input name="username" type="text" placeholder="Nom d'utilisateur" required>
-        </div>
-        <div class="formInput">
-          <p>Mot de passe (Majuscule, minuscule, chiffres, lettres et au moins 8 caractères)</p>
-          <input name="password" type="password" placeholder="Mot de passe" minlength=8 required>
-          <input name="passwordBis" type="password" placeholder="Confirmer le mot de passe" required>
-        </div>
-        <div class="formInput">
-          <p>Nom</p>
-          <input name="username" type="text" placeholder="Nom" autofocus required>
-        </div>
-        <div class="formInput">
-          <p>Prénom</p>
-          <input name="username" type="text" placeholder="Prénom" required>
-        </div>
-        <div class="formInput">
-          <p>Date de naissance</p>
-          <input name="dateNaissance" type="date"required>
-        </div>
-        <div class="formInput newsletter">
-          <p>J'accepte de recevoir la newsletter</p><input name="newsletter" type="checkbox">
-        </div>
-        <input type="submit" action="inscription.php"class="btn btn-primary validerInscription" value="Valider">
-  </div>
-</form> -->
 
 <!-- Navigation -->
 <nav class="navbar navbar-light bg-light static-top" id="navbar">
   <div class="container">
     <a class="navbar-brand" href="index.php"><b>Stockify</b> | L'investissement accessible pour tous</a>
-
 </nav>
 
 <div class="container formulaireInscription">
@@ -74,7 +39,7 @@
 
       <h4 class="mb-3">Cela ne prendra qu'un instant...</h4>
       <hr class="mb-4">
-      <form class="needs-validation" action="inscription.php" method="post" novalidate>
+      <form class="needs-validation" action="inscription.php" id="inscriptionForm" name="inscriptionForm" method="post" novalidate>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Prénom</label>
@@ -145,7 +110,7 @@
 
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="password">Mot de passe</label>
+            <label for="password">Mot de passe <span id="caracteristiquesMotDePasse">(MAJUSCULE(S) & minuscule(s) & >= 8 caractères)</span></label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="icon-key"></i></span>
@@ -164,10 +129,11 @@
               </div>
               <input type="password" class="form-control" name="passwordBis" id="passwordBis" required>
               <div class="invalid-feedback">
-                Veuillez confirmer mot de passe.
+                Veuillez confirmer le mot de passe.
               </div>
             </div>
           </div>
+          <p id="messageErreurPassword" class="messageErreurPassword" hidden>Erreur mot de passe</p>
         </div>
 
         <hr class="mb-4">
@@ -179,7 +145,8 @@
 
 
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" action="inscription.php" type="submit">Terminer mon inscription</button>
+
+        <button class="btn btn-primary btn-lg btn-block" id="btnValiderInscription" type="submit"> Terminer mon inscription</button>
       </form>
     </div>
   </div>
@@ -233,17 +200,18 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="vendor/jquery/jquery.slim.min.js"><\/script>')</script><script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="js/form-inscription-validation.js"></script>
 
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/signupForm.js"></script>
 <?php
+
+if($_GET['err']=='passwordDontMatch'){ $messageErreur="<b>Les mots de passe ne correspondent pas !</b>"; }
 if($_GET['err']=='noInput'){ $messageErreur="<b>Certains champs n\'ont pas été renseignés !</b>"; }
 if($_GET['err']=='EmailAlreadyExists'){ $messageErreur="<b>Un utilisateur est déjà inscrit avec cette adresse mail.</b>"; }
-if($_GET['err']=='UsernameAlreadyExists'){ $messageErreur="<b>Ce nom d'utilisateur n'est pas disponible, veuillez en choisir un différent.</b>"; }
-if(($_GET['err'])&&($_GET['field'])){ echo("<script>spawnError('".$messageErreur."','".$_GET['field']."');</script>"); }
-if($_GET['err']){echo("<script>spawnError('".$messageErreur."','');</script>");}
+if($_GET['err']=='UsernameAlreadyExists'){ $messageErreur="<b>Ce nom d\'utilisateur n\'est pas disponible, veuillez en choisir un différent.</b>"; }
+if($_GET['err']){echo("<script>spawnError('".$messageErreur."','".$_GET['field']."');</script>");}
 ?>
+<script src="js/form-inscription-validation.js"></script>
 </body>
 </html>
