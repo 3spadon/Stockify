@@ -20,7 +20,7 @@
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  <script src="js/loginForm.js"></script>
+  <script src="js/changePasswordForm.js"></script>
 </head>
 <?php
 session_start();
@@ -107,36 +107,37 @@ check_user();
             </div>
           </div>
           <div class="row">
-              <div class="col-md-4 mb-3">
-                <form action="changePassword.php" method="post">
-                <label for="password">Nouveau mot de passe</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-key"></i></span>
-                  </div>
-                  <input type="password" class="form-control" name="newPassword" id="password" placeholder="" required>
-                  <div class="invalid-feedback">
-                    Veuillez entrer un nouveau mot de passe.
-                  </div>
+            <div class="col-md-4 mb-3">
+              <form action="changePassword.php" method="post">
+              <label for="password">Nouveau mot de passe</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="newPassword" id="newPassword" placeholder="" required>
+                <div class="invalid-feedback">
+                  Veuillez entrer un nouveau mot de passe.
                 </div>
               </div>
-              <div class="col-md-4 mb-3">
-                <label for="passwordBis">Confirmer le mot de passe</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-key"></i></span>
-                  </div>
-                  <input type="password" class="form-control" name="newPasswordBis" id="passwordBis" required>
-                  <div class="invalid-feedback">
-                    Veuillez confirmer le mot de passe.
-                  </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="passwordBis">Confirmer le mot de passe</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-key"></i></span>
+                </div>
+                <input type="password" class="form-control" name="newPasswordBis" id="newPasswordBis" required>
+                <div class="invalid-feedback">
+                  Veuillez confirmer le mot de passe.
                 </div>
               </div>
-              <div class="col-md-4 mb-3">
-              <button class="btn btn-primary btn-block" id="btnChangePassword" type="submit"> Modifier mon mot de passe</button>
-              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+            <button class="btn btn-primary btn-block" id="btnChangePassword" onclick="checkForm" type="submit"> Modifier mon mot de passe</button>
+            </div>
             </form>
           </div>
+          <p id="messageErreur" hidden>Erreur</p>
           <!-- <p>Dernière connexion : <?php //echo($_SESSION['dateDerniereConnexion']);?></p> -->
         </div>
       </div>
