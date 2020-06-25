@@ -59,6 +59,13 @@ i#nav-user{
   }
 }
 
+.main{
+    padding-top:2em;
+    padding-bottom: 4em;
+    width: 100em;
+    margin: 0 auto;
+}
+
 .sidebar-sticky {
   position: relative;
   top: 0;

@@ -35,22 +35,21 @@
   <div class="row">
     <div class=" col-md-2 order-md-1"></div>
     <div class=" col-md-8 order-md-1">
-      <p id="messageErreur" class="messageErreur" hidden></p>
-
       <h4 class="mb-3">Cela ne prendra qu'un instant...</h4>
       <hr class="mb-4">
+        <p id="messageErreur" class="messageErreur" hidden></p>
       <form class="needs-validation" action="inscription.php" id="inscriptionForm" name="inscriptionForm" method="post" novalidate>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Prénom</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" placeholder=""  required>
+            <input type="text" class="form-control" id="firstName" name="firstName" <?php if($_GET["firstName"]){$inpFirstName=htmlentities($_GET["firstName"]);echo('value="'.$inpFirstName.'"');}?> placeholder=""  required>
             <div class="invalid-feedback">
               Veuillez entrer un prénom valide.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Nom</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" required>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" <?php if($_GET["lastName"]){$inpLastName=htmlentities($_GET["lastName"]);echo('value="'.$inpLastName.'"');}?> required>
             <div class="invalid-feedback">
               Veuillez entrer un nom valide.
             </div>
@@ -75,12 +74,13 @@
 
           <div class="col-md-6 mb-3">
             <label for="zip">Code postal</label>
-            <input type="text" class="form-control" id="zip" name="zip" placeholder="" required>
+            <input type="text" class="form-control" id="zip" name="zip" placeholder="" <?php if($_GET["zip"]){$inpZip=htmlentities($_GET["zip"]);echo('value="'.$inpZip.'"');}?> required>
             <div class="invalid-feedback">
               Veuillez entrer un code postal.
             </div>
           </div>
         </div>
+        <p id="messageErreurDetailsUtilisateur" class="messageErreurDetailsUtilisateur" hidden>Erreur</p>
         <hr class="mb-4">
         <div class="mb-3">
           <label for="email">Email</label>
@@ -88,7 +88,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="icon-envelope-open"></i></span>
             </div>
-            <input name="email" type="email" class="form-control" <?php if($_POST["email"]){$inpEmail=htmlentities($_POST["email"]);echo('value="'.$inpEmail.'"');}?> required>
+            <input name="email" type="email" class="form-control" <?php if($_POST["email"]){$inpEmail=htmlentities($_POST["email"]);echo('value="'.$inpEmail.'"');} if($_GET["email"]){$inpEmail=htmlentities($_GET["email"]);echo('value="'.$inpEmail.'"');} ?> required>
           <div class="invalid-feedback">
             Veuillez entrer une adresse email valide.
           </div>
@@ -101,7 +101,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="icon-user"></i></span>
             </div>
-            <input type="text" class="form-control" id="username" name="username" placeholder="" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="" <?php if($_GET["username"]){$inpUsername=htmlentities($_GET["username"]);echo('value="'.$inpUsername.'"');}?> required>
             <div class="invalid-feedback" style="width: 100%;">
               Un nom d'utilisateur est requis.
             </div>

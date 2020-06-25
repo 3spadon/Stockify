@@ -1,4 +1,5 @@
 <?php
+
 //Cette fonction permet de vérifier si une occurence existe déjà dans la base de données afin d'éviter les doublons et les inscriptions multiples
 function checkExisting($input,$column){
   $mysqli = new mysqli('localhost', 'stockify', 'St0cK1fY_P4sSw0rd%', 'stockify', 3306);
@@ -38,7 +39,7 @@ function inscrireUtilisateur($firstName,$lastName,$country,$zip,$email,$username
     exit();
   }
   //On prépare la requête SQL
-  $sql= "INSERT INTO `utilisateurs` (`id`, `username`, `password`, `email`, `firstName`, `lastName`, `country`, `zip`, `newsletter`, `dateInscription`, `dateDerniereConnexion`, `dateCurrentConnexion`) VALUES (NULL, '".$firstName."', SHA1('".$password."'), '".$email."', '".$firstName."', '".$lastName."', '".$country."', '".$zip."', '".$newsletter."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);";
+  $sql= "INSERT INTO `utilisateurs` (`id`, `username`, `password`, `email`, `firstName`, `lastName`, `country`, `zip`, `newsletter`, `dateInscription`, `dateDerniereConnexion`, `dateCurrentConnexion`, `verifiedEmail`) VALUES (NULL, '".$username."', SHA1('".$password."'), '".$email."', '".$firstName."', '".$lastName."', '".$country."', '".$zip."', '".$newsletter."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);";
 
 
   $mysqli->query($sql);
@@ -51,8 +52,7 @@ function inscrireUtilisateur($firstName,$lastName,$country,$zip,$email,$username
     echo"<h4>Pour rappel</h4>";
     echo"Le délit d'accès frauduleux dans un système de traitement automatisé de données est prévu et réprimé par l'article 323-1 du Code pénal aux termes duquel <br><b>&lsaquo;&lsaquo; le fait d'accéder ou de se maintenir, frauduleusement, dans tout ou partie d'un système de traitement automatisé de données est puni de deux ans d'emprisonnement et de 30 000 euros d'amende &rsaquo;&rsaquo; </b>.<br> A savoir que la protection d‚Äôun syst√®me de traitement automatis√© de donn√©es par un dispositif de sécurité n'est pas une condition de l'incrimination.";
   }
-
-  echo($sql);
+  header('Location: successfulInscription.php?email='.$email);
 }
 // inscrireUtilisateur('firstName','lastName','country','26000','email','username','password','1');
 ?>
