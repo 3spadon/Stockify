@@ -78,7 +78,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <i class="icon-graph m-auto text-primary"></i>
             </div>
             <h3>Lorem ipsum</h3>
             <p class="lead mb-0">Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsums!</p>
@@ -96,7 +96,7 @@
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+              <i class="icon-chart m-auto text-primary"></i>
             </div>
             <h3>Lorem ipsum</h3>
             <p class="lead mb-0">Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum!</p>

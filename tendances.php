@@ -49,15 +49,15 @@ check_user();
             </li>
             <hr class="separateur">
             <li class="nav-item">
-              <a class="nav-link active" href="monCompte.php">
+              <a class="nav-link" href="monCompte.php">
                 <span data-feather="home"></span>
                 <i class="icon-equalizer"> </i> Mon compte
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tendances.php">
+              <a class="nav-link active" href="tendances.php">
                 <span data-feather="file"></span>
-                <i class="icon-graph"> </i> Tendances
+                <b><i class="icon-arrow-right"> </i> <i class="icon-graph"> </i> Tendances</b>
               </a>
             </li>
             <li class="nav-item">

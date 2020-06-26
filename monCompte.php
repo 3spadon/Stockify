@@ -19,7 +19,6 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
   <script src="js/changePasswordForm.js"></script>
 </head>
 <?php
@@ -51,47 +50,51 @@ check_user();
             <li class="nav-item">
               <a class="nav-link active" href="monCompte.php">
                 <span data-feather="home"></span>
-                Mon compte <span class="sr-only">(current)</span>
+                <b><i class="icon-arrow-right"> </i> <i class="icon-equalizer"> </i> Mon compte</b>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="tendances.php">
                 <span data-feather="file"></span>
-                Tendances
+                <i class="icon-graph"> </i> Tendances
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="actualite.php">
                 <span data-feather="shopping-cart"></span>
-                Actualité
+                <i class="icon-globe"> </i> Actualité
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="communaute.php">
                 <span data-feather="users"></span>
-                Communauté
+                <i class="icon-people"> </i> Communauté
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="rapports.php">
                 <span data-feather="bar-chart-2"></span>
-                Rapports
+                <i class="icon-notebook"> </i> Rapports
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="previsions.php">
                 <span data-feather="layers"></span>
-                Prévisions
+                <i class="icon-clock"> </i> Prévisions
               </a>
             </li>
         </ul>
         </div>
         <div class="col-md-9 mx-auto">
 
-          <h1><i class="icon-settings"></i> Réglages du compte</h2>
+          <h1><i class="icon-equalizer"></i> Réglages du compte</h2>
           <hr class="separateur">
+          <h3>Dernière connexion au compte</h3>
+          <p>Votre dernière connexion était <?php echo(getLastConnection());?>.</p>
+          <br>
           <h3>Modifier mon mot de passe</h3>
-          <p>Pour rappel: votre mot de passe doit avoir une longueur d'au moins 8 caractères, contenir au moins une majuscule et une minuscule.</p>
+          <p id="passwordComplianceText">Pour rappel: votre mot de passe doit avoir une longueur d'au moins 8 caractères, contenir au moins une majuscule et une minuscule.</p>
+          <form id="changePasswordForm" action="changePassword.php" method="post">
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="password">Mot de passe actuel</label>
@@ -99,7 +102,7 @@ check_user();
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-key"></i></span>
                 </div>
-                <input type="password" class="form-control" name="password" id="password" placeholder="" required>
+                <input type="password" class="form-control" name="oldPassword" id="oldPassword"  required>
                 <div class="invalid-feedback">
                   Veuillez entrer un mot de passe.
                 </div>
@@ -108,13 +111,12 @@ check_user();
           </div>
           <div class="row">
             <div class="col-md-4 mb-3">
-              <form action="changePassword.php" method="post">
               <label for="password">Nouveau mot de passe</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-key"></i></span>
                 </div>
-                <input type="password" class="form-control" name="newPassword" id="newPassword" placeholder="" required>
+                <input type="password" class="form-control" name="newPassword" id="newPassword"  required>
                 <div class="invalid-feedback">
                   Veuillez entrer un nouveau mot de passe.
                 </div>
@@ -133,11 +135,19 @@ check_user();
               </div>
             </div>
             <div class="col-md-4 mb-3">
-            <button class="btn btn-primary btn-block" id="btnChangePassword" onclick="checkForm" type="submit"> Modifier mon mot de passe</button>
+            <button class="btn btn-primary btn-block" id="btnChangePassword" onclick="checkForm; return false;"> Modifier mon mot de passe</button>
             </div>
             </form>
           </div>
-          <p id="messageErreur" hidden>Erreur</p>
+          <p id="message" hidden>Erreur</p> <!--Message d'erreur/succès caché-->
+          <?php
+          //Si l'URL contient un paramètre 'err' c'est que les vérifications côté serveur ont détécté un problème.
+          //On affiche donc un message d'erreur personnalisé en fonction du problème détecté.
+          if($_GET['err']=='wrongPassword'){ $messageErreur="<b>Le mot de passe actuel est erroné !</b>"; }
+          if($_GET['err']=='passwordDontMatch'){ $messageErreur="<b>Les mots de passe ne correspondent pas !</b>"; }
+          if($_GET['err']){echo("<script>spawnError('".$messageErreur."');</script>");}
+          if($_GET['passwordChange']){echo("<script>spawnSuccess('<b>Votre mot de passe a correctement été modifié.</b>');</script>");}
+          ?>
           <!-- <p>Dernière connexion : <?php //echo($_SESSION['dateDerniereConnexion']);?></p> -->
         </div>
       </div>
@@ -192,7 +202,7 @@ check_user();
       </div>
     </div>
   </footer>
-
+  <script src="js/changePasswordForm.js"></script>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

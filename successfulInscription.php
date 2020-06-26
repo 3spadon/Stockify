@@ -38,8 +38,10 @@
       <h4 class="mb-3">Une dernière étape...</h4>
       <hr class="mb-4">
       <p>Félicitations, vous vous êtes correctement inscrit !</p>
-      <p>Il ne vous reste plus qu'à confirmer votre adresse <b><?php echo($_GET['email']);?></b>.</p>
-      <p>pour cela rendez-vous sur votre boîte mail. Dans les minutes à venir vous allez recevoir un courriel de notre part contenant un lien d'activation. Cliquez sur ce lien, vous aurez ensuite accès à votre compte Stockify et serez en mesure de profiter de nos services.</p>
+      <p class="crossed">Il ne vous reste plus qu'à confirmer votre adresse <b><?php echo($_GET['email']);?></b>.</p>
+      <p class="crossed">pour cela rendez-vous sur votre boîte mail. Dans les minutes à venir vous allez recevoir un courriel de notre part contenant un lien d'activation. Cliquez sur ce lien, vous aurez ensuite accès à votre compte Stockify et serez en mesure de profiter de nos services.</p>
+      <p style="color:darkred;"><b>Cette fonctionnalité n'étant pas encore disponible, vous avez accès à votre compte dès maintenant !</b></p>
+      <a href="index.php"><b>Retour sur la page d'accueil</b></a>
     </div>
   </div>
   </div>

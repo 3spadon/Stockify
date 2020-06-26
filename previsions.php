@@ -49,7 +49,7 @@ check_user();
             </li>
             <hr class="separateur">
             <li class="nav-item">
-              <a class="nav-link active" href="monCompte.php">
+              <a class="nav-link" href="monCompte.php">
                 <span data-feather="home"></span>
                 <i class="icon-equalizer"> </i> Mon compte
               </a>
@@ -79,9 +79,9 @@ check_user();
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="previsions.php">
+              <a class="nav-link active" href="previsions.php">
                 <span data-feather="layers"></span>
-                <i class="icon-clock"> </i> Prévisions
+                <b><i class="icon-arrow-right"> </i> <i class="icon-clock"> </i> Prévisions</b>
               </a>
             </li>
         </ul>

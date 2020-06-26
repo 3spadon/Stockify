@@ -205,7 +205,6 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="js/signupForm.js"></script>
 <?php
-
 if($_GET['err']=='passwordDontMatch'){ $messageErreur="<b>Les mots de passe ne correspondent pas !</b>"; }
 if($_GET['err']=='noInput'){ $messageErreur="<b>Certains champs n\'ont pas été renseignés !</b>"; }
 if($_GET['err']=='EmailAlreadyExists'){ $messageErreur="<b>Un utilisateur est déjà inscrit avec cette adresse mail.</b>"; }

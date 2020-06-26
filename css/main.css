@@ -118,3 +118,7 @@ footer.footer {
 footer ul.list-inline{
   width:35em;
 }
+
+.crossed{
+  text-decoration:line-through;
+}
